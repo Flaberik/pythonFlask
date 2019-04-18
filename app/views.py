@@ -1,11 +1,11 @@
 from flask import render_template
-
-import dbController
 from app import app
+
 
 @app.route('/')
 @app.route('/index')
 def index():
+
     user = {'name':'xyi'}
 
     posts = [
