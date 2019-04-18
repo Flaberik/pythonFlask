@@ -1,5 +1,6 @@
 from flask import render_template
 
+import dbController
 from app import app
 
 @app.route('/')
@@ -19,4 +20,4 @@ def index():
     ]
 
 
-    return render_template("index.html", title = "home", posts = posts)
+    return render_template("index.html", title = "home", posts = posts, user = user)
