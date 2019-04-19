@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect
 
 import hashlib
-import dbController import *
+from dbCon import dbController
 from app.forms import *
 
 from app import app
