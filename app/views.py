@@ -1,6 +1,6 @@
 from flask import render_template
+import app.dbController
 from app import app
-
 
 @app.route('/')
 @app.route('/index')
