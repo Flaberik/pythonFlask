@@ -1,6 +1,7 @@
 from flask import render_template, flash, redirect
 
-import app.dbController
+import hashlib
+import dbController import *
 from app.forms import *
 
 from app import app
@@ -17,12 +18,15 @@ def login():
         form = form)
 
 
-@app.route('/signup')
+@app.route('/signup', methods = ['GET', 'POST'])
 def signin():
     form = SignUp()
-    if(form.validate_on_submit()):
-        if(form.pass_one.data == form.pass_two.data):
-            pass
+
+    if form.validate_on_submit():
+        if str(form.pass_one.data) == str(form.pass_two.data):
+            dbController.sign_up(form.login, hashlib.md5(form.pass_one.data))
+            flash('registration complite')
+            return redirect('/index')
     return render_template('signup.html', title = 'Sign Up', form = form)
 
 @app.route('/')
