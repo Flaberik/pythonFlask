@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect
 
 import app.dbController
-from app.forms import LoginForm
+from app.forms import *
 
 from app import app
 
@@ -15,6 +15,13 @@ def login():
     return render_template('login.html',
         title = 'Sign In',
         form = form)
+
+@app.route('/signup')
+def signin():
+    form = SignUp()
+    if(form.validate_on_submit()):
+        pass
+    return render_template('signup.html', title = 'Sign Up', form = form)
 
 @app.route('/')
 @app.route('/index')
