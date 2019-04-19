@@ -10,17 +10,25 @@
 
       <p>
           <div class="bb">
-            Please enter your Login:<br>
-            {{form.login(size=30)}}<br>
+            Логин:<br>
+            {{form.login(size=30, class_="tfield")}}<br>
           </div>
       </p>
-    <p>
       <div class = "bb">
-        Youre pass: <br>
-        {{form.pass_one(size=30)}}
+        <p>
+            Пароль: <br>
+            {{form.pass_one(size=30, class_="tfield")}}
+        </p>
       </div>
-    </p>
+      <div class = "bb">
+
+            Пароль: <br>
+            {{form.pass_two(size=30, class_="tfield")}}
+        
+      </div>
     </div>
-    <p><input type="submit" value="Sign Up"></p>
+    <div class="btn">
+      <input type="submit" value="Sign Up">
+    </div>
 </form>
 {% endblock %}

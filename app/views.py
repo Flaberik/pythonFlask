@@ -15,13 +15,14 @@ def login():
     return render_template('login.html',
         title = 'Sign In',
         form = form)
-     
+
 
 @app.route('/signup')
 def signin():
     form = SignUp()
     if(form.validate_on_submit()):
-        pass
+        if(form.pass_one.data == form.pass_two.data):
+            pass
     return render_template('signup.html', title = 'Sign Up', form = form)
 
 @app.route('/')
