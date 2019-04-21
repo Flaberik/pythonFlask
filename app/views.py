@@ -6,7 +6,7 @@ from app.forms import *
 
 from app import app
 
-#---------------------------------------------#
+#---------------------------------------------------------------------#
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -17,7 +17,7 @@ def login():
         title = 'Sign In',
         form = form)
 
-
+#---------------------------------------------------------------------#
 @app.route('/signup', methods = ['GET', 'POST'])
 def signin():
     form = SignUp()
@@ -29,6 +29,7 @@ def signin():
             return redirect('/index')
     return render_template('signup.html', title = 'Sign Up', form = form)
 
+#---------------------------------------------------------------------#
 @app.route('/')
 @app.route('/index')
 def index():
