@@ -1,12 +1,7 @@
 from flask import render_template, flash, redirect
 
 import hashlib
-<<<<<<< HEAD
-import app.dbController
-
-=======
 from app.dbController import dbCon
->>>>>>> 79208a8d644f46b9927ccca0617149744ad14c1f
 from app.forms import *
 
 from app import app
@@ -20,7 +15,8 @@ def login():
         return redirect('/index')
     return render_template('login.html',
         title = 'Sign In',
-        form = form)
+        form = form,
+        providers = app.config['OPENID_PROVIDERS'])
 
 #---------------------------------------------------------------------#
 @app.route('/signup', methods = ['GET', 'POST'])
