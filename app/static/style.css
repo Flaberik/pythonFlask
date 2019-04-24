@@ -27,3 +27,9 @@
   margin-right: auto;
   border-radius: 0px 0px 5px 5px;
 }
+
+.form_auth{
+  width: 16%;
+  margin: 0 auto;
+  background-color: #333c;
+}
