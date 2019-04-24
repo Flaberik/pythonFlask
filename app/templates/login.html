@@ -12,7 +12,7 @@ function set_openid(openid, pr)
         openid = openid.substr(0, u) + user
     }
     form = document.forms['login'];
-    form.elements['login'].value = openid
+    form.elements['username'].value = openid
 }
 </script>
 
@@ -22,12 +22,11 @@ function set_openid(openid, pr)
     {{form.hidden_tag()}}
       <p>
         Please enter your OpenID:<br>
-        {{form.login(size=80)}}<br>
+        {{form.username(size=80)}}<br>
       </p>
 
     <p>
       Youre pass: <br>
-      {{form.pass_f(size=80)}}
       {% for error in form.errors.openid %}
         <span style="color: red;">[{{error}}]</span>
       {% endfor %}<br>
